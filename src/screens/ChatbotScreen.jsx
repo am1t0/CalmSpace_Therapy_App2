@@ -301,7 +301,8 @@ export default function ChatbotScreen() {
 
     // Show loading state
     setLoading(true);
-
+    
+    console.log("Sending message to backend:", input);
     try {
       const response = await fetch(
         "https://mummify-crisping-tweak.ngrok-free.dev/chat",
@@ -314,6 +315,7 @@ export default function ChatbotScreen() {
         },
       );
 
+      console.log("Raw response from backend:", response);
       const data = await response.json();
 
       // Show bot reply

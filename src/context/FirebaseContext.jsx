@@ -3,8 +3,7 @@ import { initializeApp, getApps } from 'firebase/app';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-// Named export required by your screens:
-export const FirebaseContext = createContext({ auth: null, db: null, user: null, loading: true });
+console.log('FirebaseContext: initializing Firebase app...');
 
 // Build config from Vite env vars
 const firebaseConfig = {

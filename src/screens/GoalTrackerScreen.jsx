@@ -266,14 +266,17 @@ export default function GoalTrackerScreen() {
   const addGoal = async () => {
     if (!newGoal.trim() || !auth?.currentUser || !db) return;
     setLoading(true);
+    console.log('1')
     try {
       const goalsRef = collection(db, `artifacts/default-calmspace-app/users/${auth.currentUser.uid}/goals`);
       await addDoc(goalsRef, { text: newGoal.trim(), completed: false, createdAt: new Date() });
       setNewGoal('');
     } catch (e) {
       console.error(e);
+    } finally {
+      console.log('2')
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const toggleGoal = async goal => {
