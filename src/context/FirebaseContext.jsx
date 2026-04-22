@@ -3,7 +3,9 @@ import { initializeApp, getApps } from 'firebase/app';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-console.log('FirebaseContext: initializing Firebase app...');
+
+// 
+export const FirebaseContext = createContext(null); 
 
 // Build config from Vite env vars
 const firebaseConfig = {
